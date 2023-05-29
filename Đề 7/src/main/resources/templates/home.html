@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nhóm 8</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <h1>Xin chào</h1>
+    <form th:object="${student}" th:action="@{/}" method="post">
+        <table>
+            <tr>
+                <td th:text="'Mã: '" align="left"></td>
+                <td>
+                    <input type="text" th:field="*{id}">
+                    <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td th:text="'Tên '" align="left"></td>
+                <td>
+                    <input type="text" th:field="*{name}">
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td th:text="'Dob: '" align="left"></td>
+                <td>
+                    <input type="text" th:field="*{dob}">
+                    <span th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td th:text="'Phòng ban: '" align="left"></td>
+                <td>
+                    <select name="department" th:field="*{department}">
+                        <option value="">--Hãy chọn một Department--</option>
+                        <option value="csharp">C#</option>
+                        <option value="cpp">C++</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="js">Javascript</option>
+                        <option value="dart">Dart</option>
+                    </select>
+                    <span th:if="${#fields.hasErrors('department')}" th:errors="*{department}" class="error"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Xác nhận"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

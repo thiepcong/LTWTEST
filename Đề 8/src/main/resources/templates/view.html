@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Đặt phòng</title>
+</head>
+
+<body>
+	
+		<h1>Danh sách đặt phòng</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>Tên</th>
+					<th>Dob</th>
+					<th>phòng</th>
+					<th>Chấp nhận</th>
+				</tr>
+			</thead>
+	
+			<tbody>
+				<tr th:each="student:${students}">
+					<td th:text="${student.name}" align="center"></td>
+					<td th:text="${student.dob}" align="center"></td>
+					<td th:text="${student.department}" align="center"></td>
+					<td th:text="${student.approved}" align="center"></td>
+	
+					<td>
+						<button><a th:href="@{/view/approved/{id}(id=${student.id})}" th:text="'Approved'"align="center"></a></button>
+						<button><a th:href="@{/view/delete/{id}(id=${student.id})}" th:text="'Delete'"align="center"></a></button>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+
+</body>
+
+</html>

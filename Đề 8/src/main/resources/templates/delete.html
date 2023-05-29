@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Nhóm 8 </title>
+  <meta charset="UTF-8">
+ 
+</head>
+
+<body >
+	
+    <h1 > Bạn có chắc muốn xoá </h1>
+    <h2>
+    <button><a th:href="@{/view/delete/confirm/{id}(id=${student.id})}">Confirm Delete</a></button></h2>
+    <h2>
+    <button><a th:href="@{/view}">Cancel</a></button></h2>
+</body>
+</html>
